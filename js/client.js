@@ -25,7 +25,7 @@ parcelRequire=function(e,r,n,t){var i="function"==typeof parcelRequire&&parcelRe
 },{}],"4ic4":[function(require,module,exports) {
 "use strict";function e(e){return function(t,n){e.objects.reactions.push({eventStr:t,callback:n,done:!1})}}Object.defineProperty(exports,"__esModule",{value:!0}),exports.once=e;
 },{}],"MmLA":[function(require,module,exports) {
-"use strict";function o(o,e){return function(t){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};console.log("render -------------------------------\x3e",t,n),o.objects.rootComponent||(o.objects.rootComponent=function(){return t(n)});var r=t||o.objects.rootComponent;e(document.body,r(n))}}Object.defineProperty(exports,"__esModule",{value:!0}),exports.render=o;
+"use strict";function o(o,e){return function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};o.objects.rootComponent||(o.objects.rootComponent=function(){return e(t)});var n=e||o.objects.rootComponent;document.body.innerHTML="",document.body.appendChild(n(t))}}Object.defineProperty(exports,"__esModule",{value:!0}),exports.render=o;
 },{}],"ozXk":[function(require,module,exports) {
 "use strict";function e(e,r){return function(e,t){var s=r[e](t);return{result:s.result,message:s.message}}}Object.defineProperty(exports,"__esModule",{value:!0}),exports.check=e;
 },{}],"roA2":[function(require,module,exports) {
