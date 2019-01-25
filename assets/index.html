@@ -39,7 +39,6 @@
       svg { user-select: none; }
       a { text-decoration: none; color: inherit; cursor: inherit; }
       button:focus { outline:0; }
-      #root { position: fixed; top: 0; left: 0; right: 0; bottom: 0; }
     </style>
     <style id='component-styles'>{{ component_styles }}</style>
 
@@ -90,7 +89,7 @@
 
   </head>
   <body>
-    <div id='root'>{{ root_body }}</div>
+    {{ root_body }}
     {{ data_script_placeholder }}
     <script type='text/javascript' charset='utf-8' src='/js/client.js'></script>
     <script type='text/javascript' charset='utf-8' src='main.js'></script>
