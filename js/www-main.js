@@ -957,6 +957,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var _default = function _default(client) {
+  console.log("client.ui", client.ui);
   var _client$ui$fragments = client.ui.fragments,
       Header = _client$ui$fragments.Header,
       Menu = _client$ui$fragments.Menu;
