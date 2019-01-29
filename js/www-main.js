@@ -646,6 +646,7 @@ var MenuIcon = function MenuIcon(client) {
       var props = _ref5.props,
           classes = _ref5.classes,
           styles = _ref5.styles;
+      console.log("props", props);
       return client.h("div", {
         style: styles.wrapper(props),
         className: classes.wrapper,
@@ -979,6 +980,7 @@ var _default = function _default(client) {
     actions: function actions(props, store) {
       return {
         onClickMenu: function onClickMenu() {
+          console.log("onClickMenu");
           store.toggle('isMenuOpen');
         }
       };
