@@ -662,7 +662,8 @@ var MenuIcon = function MenuIcon(client) {
         style: styles.bottom(props)
       }));
     },
-    id: 1001
+    id: 1000,
+    scope: 14
   });
 };
 
@@ -716,7 +717,8 @@ var Header = function Header(client) {
         style: styles.logo(state.isMenuOpen)
       }));
     },
-    id: 1002
+    id: 1000,
+    scope: 21
   });
 };
 
@@ -781,7 +783,8 @@ var Menu = function Menu(client) {
         }
       }, "Preguntas Frecuentes"));
     },
-    id: 1003
+    id: 1000,
+    scope: 26
   });
 };
 
@@ -846,7 +849,8 @@ var _default = function _default(client) {
         }, text);
       }));
     },
-    id: 1004
+    id: 1000,
+    scope: 39
   });
 };
 
@@ -899,7 +903,8 @@ var _default = function _default(client) {
       //   )
       // );
     },
-    id: 1005
+    id: 1000,
+    scope: 43
   });
 };
 
@@ -933,13 +938,13 @@ var _default = function _default(client) {
         }, text);
       }));
     },
-    id: 1006
+    id: 1000,
+    scope: 47
   });
 };
 
 exports.default = _default;
 },{}],"ui/Root.js":[function(require,module,exports) {
-var __filename = "/Users/jmaguirrei/MEGA/MEGAsync/Development/apps/museeker/www/src/client/ui/Root.js";
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -955,10 +960,7 @@ var _Faq2 = _interopRequireDefault(require("./pages/<Faq>/Faq"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var _default = function _default(client) {
-  console.log("client.ui", client.ui);
   var _client$ui$fragments = client.ui.fragments,
       Header = _client$ui$fragments.Header,
       Menu = _client$ui$fragments.Menu;
@@ -967,10 +969,7 @@ var _default = function _default(client) {
       Home = _ref[0],
       Agreements = _ref[1],
       Faq = _ref[2];
-  return client.hoc(_defineProperty({
-    id: function id() {
-      return client.id(__filename);
-    },
+  return client.hoc({
     state: function state(props, store) {
       return {
         currentPage: store.get('currentPage') || 'home',
@@ -1020,8 +1019,10 @@ var _default = function _default(client) {
       }, client.h(Agreements, null)), client.h("div", {
         style: styles.page(currentPage === 'faq')
       }, client.h(Faq, null))));
-    }
-  }, "id", 1000));
+    },
+    id: 1000,
+    scope: 3
+  });
 };
 
 exports.default = _default;
