@@ -666,7 +666,7 @@ var _default = function _default(client, id) {
 };
 
 exports.default = _default;
-},{}],"src/client/ui/components/index.js":[function(require,module,exports) {
+},{}],"ui/components/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -682,8 +682,6 @@ Object.defineProperty(exports, "MenuIcon", {
 var _MenuIcon = _interopRequireDefault(require("./MenuIcon"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_MenuIcon.default.id = 3000;
 },{"./MenuIcon":"ui/components/MenuIcon.js"}],"ui/fragments/Header.js":[function(require,module,exports) {
 "use strict";
 
@@ -789,7 +787,7 @@ var _default = function _default(client, id) {
 };
 
 exports.default = _default;
-},{}],"src/client/ui/fragments/index.js":[function(require,module,exports) {
+},{}],"ui/fragments/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -813,9 +811,6 @@ var _Header = _interopRequireDefault(require("./Header"));
 var _Menu = _interopRequireDefault(require("./Menu"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_Header.default.id = 4000;
-_Menu.default.id = 4001;
 },{"./Header":"ui/fragments/Header.js","./Menu":"ui/fragments/Menu.js"}],"ui/pages/<Home>/Home.js":[function(require,module,exports) {
 "use strict";
 
@@ -978,10 +973,6 @@ var _Agreements = _interopRequireDefault(require("./<Agreements>/Agreements"));
 var _Faq = _interopRequireDefault(require("./<Faq>/Faq"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_Home.default.id = 2000;
-_Agreements.default.id = 2001;
-_Faq.default.id = 2002;
 },{"./<Home>/Home":"ui/pages/<Home>/Home.js","./<Agreements>/Agreements":"ui/pages/<Agreements>/Agreements.js","./<Faq>/Faq":"ui/pages/<Faq>/Faq.js"}],"ui/Root.js":[function(require,module,exports) {
 "use strict";
 
@@ -1110,7 +1101,7 @@ var _default = {
   }
 };
 exports.default = _default;
-},{"./client/store":"src/client/store/index.js","./client/lib":"src/client/lib/index.js","./client/ui/components":"src/client/ui/components/index.js","./client/ui/fragments":"src/client/ui/fragments/index.js","./client/ui/pages":"ui/pages/index.js","./client/ui/Root":"ui/Root.js"}],"src/client/main.js":[function(require,module,exports) {
+},{"./client/store":"src/client/store/index.js","./client/lib":"src/client/lib/index.js","./client/ui/components":"ui/components/index.js","./client/ui/fragments":"ui/fragments/index.js","./client/ui/pages":"ui/pages/index.js","./client/ui/Root":"ui/Root.js"}],"src/client/main.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
