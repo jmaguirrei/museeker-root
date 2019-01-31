@@ -104,7 +104,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"store/actions/changeRoute.js":[function(require,module,exports) {
+})({"src/client/store/actions/changeRoute.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -136,7 +136,7 @@ var _default = function _default() {
 };
 
 exports.default = _default;
-},{}],"store/actions/index.js":[function(require,module,exports) {
+},{}],"src/client/store/actions/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -152,7 +152,7 @@ Object.defineProperty(exports, "changeRoute", {
 var _changeRoute = _interopRequireDefault(require("./changeRoute"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./changeRoute":"store/actions/changeRoute.js"}],"store/index.js":[function(require,module,exports) {
+},{"./changeRoute":"src/client/store/actions/changeRoute.js"}],"src/client/store/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -177,7 +177,7 @@ var _default = {
   }
 };
 exports.default = _default;
-},{"./actions":"store/actions/index.js"}],"lib/constants/paths.js":[function(require,module,exports) {
+},{"./actions":"src/client/store/actions/index.js"}],"src/client/lib/constants/paths.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -192,7 +192,7 @@ var Paths = {
   LOGO_DARK: "".concat(images, "/internal/logo/logo-dark")
 };
 exports.Paths = Paths;
-},{}],"lib/constants/colors.js":[function(require,module,exports) {
+},{}],"src/client/lib/constants/colors.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -204,7 +204,7 @@ var Colors = {
   BLUE_TEXT: 'hsl(215, 79%, 38%)'
 };
 exports.Colors = Colors;
-},{}],"lib/constants/sizes.js":[function(require,module,exports) {
+},{}],"src/client/lib/constants/sizes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -215,7 +215,7 @@ var Sizes = {
   HEADER_HEIGHT: '55px'
 };
 exports.Sizes = Sizes;
-},{}],"lib/content/home.js":[function(require,module,exports) {
+},{}],"src/client/lib/content/home.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -291,7 +291,7 @@ var Home = [{
   text: 'Ve en tiempo real dónde viene el conductor o dónde están los demás pasajeros para facilitar el encuentro y la puntualidad.'
 }];
 exports.Home = Home;
-},{"../constants/paths":"lib/constants/paths.js"}],"lib/content/agreements.js":[function(require,module,exports) {
+},{"../constants/paths":"src/client/lib/constants/paths.js"}],"src/client/lib/content/agreements.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -371,7 +371,7 @@ var Agreements = [{
   text: 'Cargamos saldo a los primeros colaboradores registrados para que puedan comenzar de inmediato!'
 }];
 exports.Agreements = Agreements;
-},{"../constants/paths":"lib/constants/paths.js"}],"lib/content/faq.js":[function(require,module,exports) {
+},{"../constants/paths":"src/client/lib/constants/paths.js"}],"src/client/lib/content/faq.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -549,7 +549,7 @@ var Faq = [{
   text: 'No. La ida y la vuelta se tratan como rutas independientes (se publican por separado). Puedes publicar solo ida, solo vuelta, o ambas según te acomode. Esto significa que no solo decides qué días quieres compartir cada una como se explica en el punto anterior, sino que incluso puedes tener seguidores distintos para la ida o la vuelta.'
 }];
 exports.Faq = Faq;
-},{}],"lib/index.js":[function(require,module,exports) {
+},{}],"src/client/lib/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -603,20 +603,21 @@ var _home = require("./content/home");
 var _agreements = require("./content/agreements");
 
 var _faq = require("./content/faq");
-},{"./constants/paths":"lib/constants/paths.js","./constants/colors":"lib/constants/colors.js","./constants/sizes":"lib/constants/sizes.js","./content/home":"lib/content/home.js","./content/agreements":"lib/content/agreements.js","./content/faq":"lib/content/faq.js"}],"ui/components/MenuIcon.js":[function(require,module,exports) {
+},{"./constants/paths":"src/client/lib/constants/paths.js","./constants/colors":"src/client/lib/constants/colors.js","./constants/sizes":"src/client/lib/constants/sizes.js","./content/home":"src/client/lib/content/home.js","./content/agreements":"src/client/lib/content/agreements.js","./content/faq":"src/client/lib/content/faq.js"}],"ui/components/MenuIcon.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.MenuIcon = void 0;
+exports.default = void 0;
 var size = 40;
 var lineW = 74; // %
 
 var lineH = Math.floor(size / 10);
 
-var MenuIcon = function MenuIcon(client) {
+var _default = function _default(client, id) {
   return client.hoc({
+    id: id,
     classes: {
       wrapper: "\n        position: absolute;\n        display: flex;\n        flex-flow: column;\n        justify-content: center;\n        height: ".concat(size, "px;\n        width: ").concat(size, "px;\n        cursor: pointer;\n      "),
       line: "\n        position: absolute;\n        width: ".concat(lineW, "%;\n        left: ").concat(0.5 * (100 - lineW), "%;\n        height: ").concat(lineH, "px;\n        border-radius: ").concat(size, "px;\n        transition: all .4s cubic-bezier(0.65, 0.04, 0.29, 0.97);\n        transform-origin: center center;\n      ")
@@ -646,7 +647,6 @@ var MenuIcon = function MenuIcon(client) {
       var props = _ref5.props,
           classes = _ref5.classes,
           styles = _ref5.styles;
-      console.log("props", props);
       return client.h("div", {
         style: styles.wrapper(props),
         className: classes.wrapper,
@@ -661,14 +661,12 @@ var MenuIcon = function MenuIcon(client) {
         className: classes.line,
         style: styles.bottom(props)
       }));
-    },
-    id: 1000,
-    scope: 14
+    }
   });
 };
 
-exports.MenuIcon = MenuIcon;
-},{}],"ui/components/index.js":[function(require,module,exports) {
+exports.default = _default;
+},{}],"src/client/ui/components/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -677,21 +675,26 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "MenuIcon", {
   enumerable: true,
   get: function () {
-    return _MenuIcon.MenuIcon;
+    return _MenuIcon.default;
   }
 });
 
-var _MenuIcon = require("./MenuIcon");
+var _MenuIcon = _interopRequireDefault(require("./MenuIcon"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_MenuIcon.default.id = 3000;
 },{"./MenuIcon":"ui/components/MenuIcon.js"}],"ui/fragments/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Header = void 0;
+exports.default = void 0;
 
-var Header = function Header(client) {
+var _default = function _default(client, id) {
   return client.hoc({
+    id: id,
     state: function state(props, store) {
       return {
         isMenuOpen: store.get('isMenuOpen')
@@ -716,23 +719,22 @@ var Header = function Header(client) {
         src: client.lib.Paths.LOGO_LIGHT,
         style: styles.logo(state.isMenuOpen)
       }));
-    },
-    id: 1000,
-    scope: 21
+    }
   });
 };
 
-exports.Header = Header;
+exports.default = _default;
 },{}],"ui/fragments/Menu.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Menu = void 0;
+exports.default = void 0;
 
-var Menu = function Menu(client) {
+var _default = function _default(client, id) {
   return client.hoc({
+    id: id,
     state: function state(props, store) {
       return {
         isMenuOpen: store.get('isMenuOpen')
@@ -782,14 +784,12 @@ var Menu = function Menu(client) {
           return _onclick('faq');
         }
       }, "Preguntas Frecuentes"));
-    },
-    id: 1000,
-    scope: 26
+    }
   });
 };
 
-exports.Menu = Menu;
-},{}],"ui/fragments/index.js":[function(require,module,exports) {
+exports.default = _default;
+},{}],"src/client/ui/fragments/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -798,19 +798,24 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "Header", {
   enumerable: true,
   get: function () {
-    return _Header.Header;
+    return _Header.default;
   }
 });
 Object.defineProperty(exports, "Menu", {
   enumerable: true,
   get: function () {
-    return _Menu.Menu;
+    return _Menu.default;
   }
 });
 
-var _Header = require("./Header");
+var _Header = _interopRequireDefault(require("./Header"));
 
-var _Menu = require("./Menu");
+var _Menu = _interopRequireDefault(require("./Menu"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_Header.default.id = 4000;
+_Menu.default.id = 4001;
 },{"./Header":"ui/fragments/Header.js","./Menu":"ui/fragments/Menu.js"}],"ui/pages/<Home>/Home.js":[function(require,module,exports) {
 "use strict";
 
@@ -819,8 +824,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _default = function _default(client) {
+var _default = function _default(client, id) {
   return client.hoc({
+    id: id,
     classes: {
       wrapper: "\n        display: flex;\n        flex-flow: column;\n        align-items: center;\n        text-align: center;\n        padding-bottom: 25vh;\n      ",
       headline: "\n        font-size: 24px;\n        padding: 20px;\n      ",
@@ -848,9 +854,7 @@ var _default = function _default(client) {
           className: classStyles
         }, text);
       }));
-    },
-    id: 1000,
-    scope: 39
+    }
   });
 };
 
@@ -863,8 +867,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _default = function _default(client) {
+var _default = function _default(client, id) {
   return client.hoc({
+    id: id,
     classes: {
       wrapper: "\n        display: flex;\n        flex-flow: column;\n        align-items: center;\n        text-align: center;\n        padding-bottom: 25vh;\n      ",
       headline: "\n        font-size: 24px;\n        padding: 20px;\n      ",
@@ -902,9 +907,7 @@ var _default = function _default(client) {
       //     })
       //   )
       // );
-    },
-    id: 1000,
-    scope: 43
+    }
   });
 };
 
@@ -917,8 +920,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _default = function _default(client) {
+var _default = function _default(client, id) {
   return client.hoc({
+    id: id,
     classes: {
       wrapper: "\n        display: flex;\n        flex-flow: column;\n        align-items: center;\n        text-align: center;\n        padding-bottom: 25vh;\n      ",
       question: "\n        font-size: 24px;\n        font-weight: bold;\n        padding: 40px 20px;\n        margin-top: 50px;\n        color: ".concat(client.lib.Colors.BLUE_TEXT, ";\n      "),
@@ -937,14 +941,48 @@ var _default = function _default(client) {
           className: classes[className]
         }, text);
       }));
-    },
-    id: 1000,
-    scope: 47
+    }
   });
 };
 
 exports.default = _default;
-},{}],"ui/Root.js":[function(require,module,exports) {
+},{}],"ui/pages/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Home", {
+  enumerable: true,
+  get: function () {
+    return _Home.default;
+  }
+});
+Object.defineProperty(exports, "Agreements", {
+  enumerable: true,
+  get: function () {
+    return _Agreements.default;
+  }
+});
+Object.defineProperty(exports, "Faq", {
+  enumerable: true,
+  get: function () {
+    return _Faq.default;
+  }
+});
+
+var _Home = _interopRequireDefault(require("./<Home>/Home"));
+
+var _Agreements = _interopRequireDefault(require("./<Agreements>/Agreements"));
+
+var _Faq = _interopRequireDefault(require("./<Faq>/Faq"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_Home.default.id = 2000;
+_Agreements.default.id = 2001;
+_Faq.default.id = 2002;
+},{"./<Home>/Home":"ui/pages/<Home>/Home.js","./<Agreements>/Agreements":"ui/pages/<Agreements>/Agreements.js","./<Faq>/Faq":"ui/pages/<Faq>/Faq.js"}],"ui/Root.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -952,24 +990,18 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _Home2 = _interopRequireDefault(require("./pages/<Home>/Home"));
-
-var _Agreements2 = _interopRequireDefault(require("./pages/<Agreements>/Agreements"));
-
-var _Faq2 = _interopRequireDefault(require("./pages/<Faq>/Faq"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 var _default = function _default(client) {
+  console.log("client.ui.pages", client.ui.pages);
   var _client$ui$fragments = client.ui.fragments,
       Header = _client$ui$fragments.Header,
       Menu = _client$ui$fragments.Menu;
   var MenuIcon = client.ui.components.MenuIcon;
-  var _ref = [(0, _Home2.default)(client), (0, _Agreements2.default)(client), (0, _Faq2.default)(client)],
-      Home = _ref[0],
-      Agreements = _ref[1],
-      Faq = _ref[2];
+  var _client$ui$pages = client.ui.pages,
+      Home = _client$ui$pages.Home,
+      Agreements = _client$ui$pages.Agreements,
+      Faq = _client$ui$pages.Faq;
   return client.hoc({
+    id: 1000,
     state: function state(props, store) {
       return {
         currentPage: store.get('currentPage') || 'home',
@@ -993,11 +1025,11 @@ var _default = function _default(client) {
       root: "\n        position: fixed;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n      ",
       scrollable: "\n        position: relative;\n        width: 100%;\n        height: 100vh;\n        overflow-x: hidden;\n        overflow-y: scroll;\n        -webkit-overflow-scrolling: touch;\n      "
     },
-    render: function render(_ref2) {
-      var actions = _ref2.actions,
-          state = _ref2.state,
-          styles = _ref2.styles,
-          classes = _ref2.classes;
+    render: function render(_ref) {
+      var actions = _ref.actions,
+          state = _ref.state,
+          styles = _ref.styles,
+          classes = _ref.classes;
       var onClickMenu = actions.onClickMenu;
       var currentPage = state.currentPage,
           isMenuOpen = state.isMenuOpen;
@@ -1019,14 +1051,12 @@ var _default = function _default(client) {
       }, client.h(Agreements, null)), client.h("div", {
         style: styles.page(currentPage === 'faq')
       }, client.h(Faq, null))));
-    },
-    id: 1000,
-    scope: 3
+    }
   });
 };
 
 exports.default = _default;
-},{"./pages/<Home>/Home":"ui/pages/<Home>/Home.js","./pages/<Agreements>/Agreements":"ui/pages/<Agreements>/Agreements.js","./pages/<Faq>/Faq":"ui/pages/<Faq>/Faq.js"}],"../config.js":[function(require,module,exports) {
+},{}],"../config.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1042,6 +1072,8 @@ var components = _interopRequireWildcard(require("./client/ui/components"));
 
 var fragments = _interopRequireWildcard(require("./client/ui/fragments"));
 
+var pages = _interopRequireWildcard(require("./client/ui/pages"));
+
 var _Root = _interopRequireDefault(require("./client/ui/Root"));
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
@@ -1054,6 +1086,7 @@ var _default = {
     lib: lib,
     components: components,
     fragments: fragments,
+    pages: pages,
     rootComponent: _Root.default,
     rootNodeId: 'root'
   },
@@ -1077,7 +1110,7 @@ var _default = {
   }
 };
 exports.default = _default;
-},{"./client/store":"store/index.js","./client/lib":"lib/index.js","./client/ui/components":"ui/components/index.js","./client/ui/fragments":"ui/fragments/index.js","./client/ui/Root":"ui/Root.js"}],"main.js":[function(require,module,exports) {
+},{"./client/store":"src/client/store/index.js","./client/lib":"src/client/lib/index.js","./client/ui/components":"src/client/ui/components/index.js","./client/ui/fragments":"src/client/ui/fragments/index.js","./client/ui/pages":"ui/pages/index.js","./client/ui/Root":"ui/Root.js"}],"src/client/main.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1089,12 +1122,11 @@ var _config = _interopRequireDefault(require("../config.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log("config", _config.default); // const isDevelopment = process.env.NODE_ENV === 'development';
+// const isDevelopment = process.env.NODE_ENV === 'development';
 // const client = isDevelopment ? require('@jmaguirrei/client').client : window.jmaguirrei.client;
-
 var client = window.jmaguirrei.client;
 
 var _default = client.init(_config.default.client);
 
 exports.default = _default;
-},{"../config.js":"../config.js"}]},{},["main.js"], null)
+},{"../config.js":"../config.js"}]},{},["src/client/main.js"], null)
