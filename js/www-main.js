@@ -981,8 +981,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _default = function _default(client) {
-  console.log("client.ui.pages", client.ui.pages);
+var _default = function _default(client, id) {
   var _client$ui$fragments = client.ui.fragments,
       Header = _client$ui$fragments.Header,
       Menu = _client$ui$fragments.Menu;
@@ -992,7 +991,7 @@ var _default = function _default(client) {
       Agreements = _client$ui$pages.Agreements,
       Faq = _client$ui$pages.Faq;
   return client.hoc({
-    id: 1000,
+    id: id,
     state: function state(props, store) {
       return {
         currentPage: store.get('currentPage') || 'home',
@@ -1072,36 +1071,18 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
-  client: {
-    store: _store.default,
-    lib: lib,
-    components: components,
-    fragments: fragments,
-    pages: pages,
-    rootComponent: _Root.default,
-    rootNodeId: 'root'
-  },
-  env: {
-    development: {
-      httpPort: 4001,
-      socketPort: null,
-      baseUrl: 'localhost',
-      baseFolder: '',
-      useServiceWorker: false,
-      useManifest: false
-    },
-    production: {
-      httpPort: 4001,
-      socketPort: null,
-      baseUrl: 'museeker.io',
-      baseFolder: 'base-www',
-      useServiceWorker: true,
-      useManifest: false
-    }
-  }
+  store: _store.default,
+  lib: lib,
+  components: components,
+  fragments: fragments,
+  pages: pages,
+  rootComponent: _Root.default,
+  rootNodeId: 'root',
+  routes: ['home', 'agreements', 'faq'],
+  defaultRoute: 'home'
 };
 exports.default = _default;
-},{"./client/store":"src/client/store/index.js","./client/lib":"src/client/lib/index.js","./client/ui/components":"ui/components/index.js","./client/ui/fragments":"ui/fragments/index.js","./client/ui/pages":"ui/pages/index.js","./client/ui/Root":"ui/Root.js"}],"src/client/main.js":[function(require,module,exports) {
+},{"./client/store":"src/client/store/index.js","./client/lib":"src/client/lib/index.js","./client/ui/components":"ui/components/index.js","./client/ui/fragments":"ui/fragments/index.js","./client/ui/pages":"ui/pages/index.js","./client/ui/Root":"ui/Root.js"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1113,11 +1094,9 @@ var _config = _interopRequireDefault(require("../config.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// const isDevelopment = process.env.NODE_ENV === 'development';
-// const client = isDevelopment ? require('@jmaguirrei/client').client : window.jmaguirrei.client;
 var client = window.jmaguirrei.client;
 
-var _default = client.init(_config.default.client);
+var _default = client.init(_config.default);
 
 exports.default = _default;
-},{"../config.js":"../config.js"}]},{},["src/client/main.js"], null)
+},{"../config.js":"../config.js"}]},{},["main.js"], null)
